@@ -1,0 +1,70 @@
+/* ── Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&family=Press+Start+2P&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --bg:        #F5F0E8;   /* warm off-white */
+  --ink:       #1A1814;   /* near-black */
+  --gold:      #C9A84C;   /* accent gold */
+  --gold-dim:  #8A6E2F;   /* darker gold for hover */
+  --muted:     #6B6355;   /* muted warm gray */
+  --rule:      #D8CEB8;   /* hairline divider */
+  --card-bg:   #EDE7D9;   /* slightly deeper card bg */
+
+  --font-display: 'Press Start 2P', monospace;
+  --font-body:    'Lora', Georgia, serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--gold-dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--gold); }
+
+/* ── Utility ── */
+.mono  { font-family: var(--font-mono); }
+.pixel { font-family: var(--font-display); }
+.muted { color: var(--muted); }
+
+.container {
+  width: min(720px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin-block: 2.5rem;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
